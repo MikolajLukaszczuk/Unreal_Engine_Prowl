@@ -5,7 +5,9 @@
 #include "Components/ActorComponent.h"
 #include "PatrolRoute.generated.h"
 
-
+/*
+*	A "route card" to help AI choose their next waypoint  
+*/
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class PROWL_API UPatrolRoute : public UActorComponent
 {
