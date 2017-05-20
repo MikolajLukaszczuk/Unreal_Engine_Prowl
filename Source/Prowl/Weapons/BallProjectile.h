@@ -1,10 +1,10 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 #pragma once
 #include "GameFramework/Actor.h"
-#include "ProwlProjectile.generated.h"
+#include "BallProjectile.generated.h"
 
 UCLASS(config=Game)
-class AProwlProjectile : public AActor
+class ABallProjectile : public AActor
 {
 	GENERATED_BODY()
 
@@ -17,7 +17,7 @@ class AProwlProjectile : public AActor
 	class UProjectileMovementComponent* ProjectileMovement;
 
 public:
-	AProwlProjectile();
+	ABallProjectile();
 
 	/** called when projectile hits something */
 	UFUNCTION()
