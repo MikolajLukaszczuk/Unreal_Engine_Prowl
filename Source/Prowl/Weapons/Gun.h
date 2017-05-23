@@ -58,6 +58,7 @@ public:
 	class UMotionControllerComponent* L_MotionController;
 
 	/** Fires a projectile. */
+	UFUNCTION(BlueprintCallable, Category = "Input")
 	void OnFire();
 
 protected:
