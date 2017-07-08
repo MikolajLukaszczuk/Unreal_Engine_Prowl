@@ -14,8 +14,14 @@ class PROWL_API AInfiniteTerrainGameMode : public AProwlGameMode
 	GENERATED_BODY()
 	
 public:
+	AInfiniteTerrainGameMode();
+
 	UFUNCTION(BlueprintCallable, Category = "Bounds Pool")
 	void PopulateBoundsVolumePool();
+
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pool")
+	class UActorPool* NavMeshBoundsVolumePool;
 
 private:
 	void AddToPool(ANavMeshBoundsVolume *VolumeToAdd);
