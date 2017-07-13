@@ -11,6 +11,8 @@ ATile::ATile()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	
+	NavigationBoundsOffset = FVector(4000, 0, 0);
+
 	MinExtent = FVector(0, -4000, 0);
 	MaxExtent = FVector(8000, 4000, 0);
 }
@@ -30,7 +32,8 @@ void ATile::PositionNavMeshBoundsVolume()
 		UE_LOG(LogTemp, Error, TEXT("[%s] Not enough actors in pool."), *GetName());
 		return;
 	}
-	NavMeshBoundsVolume->SetActorLocation(GetActorLocation());
+	NavMeshBoundsVolume->SetActorLocation(GetActorLocation() + NavigationBoundsOffset);
+	GetWorld()->GetNavigationSystem()->Build();
 }
 
 void  ATile::PlaceActors(TSubclassOf<AActor> ToSpawn, int MinSpawn, int MaxSpawn, float Radius, float MinScale, float MaxScale)
